@@ -1,0 +1,28 @@
+{
+    "experiences": [
+        {
+            "title": "Frontend Engineer",
+            "company": "Tech Company",
+            "duration": "2024 - Present",
+            "description": "Led development of responsive web applications using modern frameworks",
+            "responsibilities": [
+                "Developed and maintained user interfaces using React and TypeScript",
+                "Collaborated with design team to implement pixel-perfect designs",
+                "Optimized application performance and loading times"
+            ],
+            "technologies": ["React", "TypeScript", "CSS"]
+        },
+        {
+            "title": "Software Engineer Intern",
+            "company": "Startup Inc",
+            "duration": "2023",
+            "description": "Worked on full-stack development of web applications",
+            "responsibilities": [
+                "Built RESTful APIs using Node.js and Express",
+                "Implemented new features in React frontend",
+                "Wrote unit tests and documentation"
+            ],
+            "technologies": ["Node.js", "Express", "MongoDB"]
+        }
+    ]
+}

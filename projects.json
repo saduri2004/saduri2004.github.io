@@ -1,16 +1,100 @@
 {
     "projects": [
         {
-            "title": "Opiniometer",
-            "description": "Analyze sentiment on specific topic based on twitter posts",
-            "image": "opiniometer.png",
-            "technologies": ["React", "Python", "Chart.js"]
+            "title": "Employd",
+            "img": "assets/employd.png",    
+            "description": "An iOS app to assist with unemployment benefits. Received a Congressional Certificate after Texas Workforce Commissions sponsored the app.",
+            "technologies": ["Swift", "iOS"],
+            "topics": ["Unemployment Benefits", "Social Impact"],
+            "date": "2023-06-15"
         },
         {
-            "title": "creative@home",
-            "description": "A website that provides roadmap for various fields in Programming and help people learn to code for free.",
-            "image": "creative-at-home.png",
-            "technologies": ["Javascript", "Sass"]
+            "title": "Wing AI",
+            "img": "assets/wingsearch.png",
+            "description": "A generative AI shopping assistant used in 7 Shopify stores to enhance customer experience.",
+            "technologies": ["Python", "LLM APIs", "Shopify Integration"],
+            "topics": ["Generative AI", "E-commerce"],
+            "date": "2024-03-01"
+        },
+        {
+            "title": "Wing AI Healthcare",
+            "img": "assets/wingmedicalscribe.png",
+            "description": "Developed an AI-powered medical scribe to assist in healthcare documentation.",
+            "technologies": ["Python", "LLM APIs", "Healthcare Systems"],
+            "topics": ["Healthcare AI", "Automation"],
+            "date": "2024-04-15"
+        },
+        {
+            "title": "Wing AI Healthcare 2",
+            "img": "assets/wingaihealthcare2.png",
+            "description": "Built an AI-powered healthcare frontdesk system and a healthcare translation tool for medical documentation.",
+            "technologies": ["Python", "Flask", "RAG"],
+            "topics": ["Healthcare AI", "Translation", "Frontdesk Automation"],
+            "date": "2024-06-20"
+        },
+        {
+            "title": "Audibraille",
+            "img": "assets/audibraille.png",
+            "description": "Created an attachable device for glasses to convert books into audio in real-time, supporting 100+ languages for blind students in India.",
+            "technologies": ["Computer Vision", "NLP", "Hardware"],
+            "topics": ["Accessibility", "Education"],
+            "date": "2024-08-01"
+        },
+        {
+            "title": "ORAGutan",
+            "img": "assets/oragutan.png",
+            "description": "Developed a Retrieval-Augmented Generation (RAG) benchmark to evaluate generative AI systems.",
+            "technologies": ["Python", "LLMs", "Benchmarking Tools"],
+            "topics": ["RAG", "AI Benchmarks"],
+            "date": "2024-09-15"
+        },
+        {
+            "title": "WebGauntlet",
+            "img": "assets/webgauntlet.png",
+            "description": "A web safety and security benchmark designed for testing web agents against malicious internet content.",
+            "technologies": ["React", "Node.js", "Python"],
+            "topics": ["Web Security", "Agent Testing"],
+            "date": "2024-10-01"
+        },
+        {
+            "title": "AgentOS",
+            "img": "assets/agentos.png",
+            "description": "Built a multi-agent workflow creator that automates processes using natural language input.",
+            "technologies": ["Python", "LLM APIs", "Workflow Automation"],
+            "topics": ["Multi-Agent Systems", "Automation"],
+            "date": "2024-11-01"
+        },
+        {
+            "title": "Chameleon",
+            "img": "assets/chameleon.png",
+            "description": "An application that automatically customizes resumes and cover letters for job applications.",
+            "technologies": ["Python", "NLP"],
+            "topics": ["Career Development", "Automation"],
+            "date": "2024-12-01"
+        },
+        {
+            "title": "Stock Picker",
+            "img": "assets/stockpicker.png",
+            "description": "An AI tool that uses deep learning to identify optimal stock investments.",
+            "technologies": ["Python", "Deep Learning", "Finance APIs"],
+            "topics": ["Finance", "Machine Learning"],
+            "date": "2025-01-01"
+        },
+        {
+            "title": "4G Coverage Optimization",
+            "img": "assets/4gcoverage.png",
+            "description": "Developed algorithms to optimize 4G coverage for telecom networks.",
+            "technologies": ["Python", "Optimization Algorithms"],
+            "topics": ["Telecom", "Optimization"],
+            "date": "2023-05-01"
+        },
+        {
+            "title": "Black Scholes Investment Engine",
+            "img": "assets/blackscholes.png",
+            "description": "Implemented an investment engine using the Black-Scholes model for option pricing.",
+            "technologies": ["Python", "Finance Models"],
+            "topics": ["Finance", "Quantitative Modeling"],
+            "date": "2023-12-01"
         }
     ]
 }
