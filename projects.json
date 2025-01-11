@@ -1,0 +1,16 @@
+{
+    "projects": [
+        {
+            "title": "Opiniometer",
+            "description": "Analyze sentiment on specific topic based on twitter posts",
+            "image": "opiniometer.png",
+            "technologies": ["React", "Python", "Chart.js"]
+        },
+        {
+            "title": "creative@home",
+            "description": "A website that provides roadmap for various fields in Programming and help people learn to code for free.",
+            "image": "creative-at-home.png",
+            "technologies": ["Javascript", "Sass"]
+        }
+    ]
+}
