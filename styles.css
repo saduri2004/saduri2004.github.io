@@ -144,6 +144,41 @@ h1 {
     font-size: 0.8rem;
 }
 
+/* Loading and Error States */
+.loading-indicator {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.loading-indicator i {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+.error-message {
+    background: #ff616130;
+    color: #ff6161;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.error-message i {
+    margin-right: 0.5rem;
+}
+
+/* Project Card Hover Effect */
+.project-card-hover {
+    box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+    transform: translateY(-7px);
+}
+
+.project-card-hover .project-info {
+    background: linear-gradient(to bottom, #112240, #1a365d);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
@@ -158,4 +193,3 @@ h1 {
         grid-template-columns: 1fr;
     }
 }
-
