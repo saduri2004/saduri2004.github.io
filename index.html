@@ -1,20 +1,25 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
     <title>Developer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
     <div class="container">
         <!-- Header Section -->
         <header>
             <div class="intro">
                 <p class="greeting">Hey there!, I'm-</p>
-                <h1>Abdul Rahman.</h1>
+                <h1>Sasank Aduri.</h1>
                 <div class="title">
                     <h2>Software Engineer.</h2>
                     <p>A self-taught developer with an interest in Computer Science.</p>
@@ -44,9 +49,15 @@
             <h2>⚡ About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Hey! I'm Abdul Rahman, I've been close to a computer since an early age, and been passionate about it ever since.</p>
-                    <p>I really liked to build stuff using no-code tools back in 2010, and from that, I explored how to code myself, fast-forward to today, I do programming in various languages and technologies, and had the privilege to worked in a Recruitment Company and a SaaS Company. I'm interested in building something awesome with code and automate tasks with code, currently focused on Web & Mobile Development, Open Source and Competitive Programming.</p>
-                    <p>When I'm not coding I play games with my friends, watch some show on Netflix, or if the weather's good, play basketball! 🏀</p>
+                    <p>Hey! I'm Abdul Rahman, I've been close to a computer since an early age, and been passionate
+                        about it ever since.</p>
+                    <p>I really liked to build stuff using no-code tools back in 2010, and from that, I explored how to
+                        code myself, fast-forward to today, I do programming in various languages and technologies, and
+                        had the privilege to worked in a Recruitment Company and a SaaS Company. I'm interested in
+                        building something awesome with code and automate tasks with code, currently focused on Web &
+                        Mobile Development, Open Source and Competitive Programming.</p>
+                    <p>When I'm not coding I play games with my friends, watch some show on Netflix, or if the weather's
+                        good, play basketball! 🏀</p>
                 </div>
                 <div class="profile-image">
                     <img src="profile-image.jpg" alt="Profile Image">
@@ -80,7 +91,7 @@
         function createProjectElement(project) {
             const projectDiv = document.createElement('div');
             projectDiv.className = 'project-card';
-            
+
             projectDiv.innerHTML = `
                 <div class="project-image">
                     <img src="${project.image}" alt="${project.title}">
@@ -95,10 +106,10 @@
                     <p>${project.description}</p>
                 </div>
             `;
-            
+
             return projectDiv;
         }
     </script>
 </body>
-</html>
 
+</html>
