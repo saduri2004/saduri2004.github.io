@@ -20,8 +20,8 @@
                     <p class="greeting">Hey there!, I'm-</p>
                     <h1>Sasank Aduri.</h1>
                     <div class="title">
-                        <h2>Software Engineer.</h2>
-                        <p>A self-taught developer with an interest in Computer Science.</p>
+                        <h2>some role name.</h2>
+                        <p>some description about 2 sentences long.</p>
                     </div>
                 </div>
                 <div class="profile-pic">
@@ -30,46 +30,44 @@
             </div>
 
             <div class="current-work">
-                <p>🚀 Currently specializing in Frontend (React / Next.js)</p>
-                <p>⚡ Frontend Engineer at GGL</p>
+                <p>🐻 3rd Year EECS Student at UC Berkeley</p>
+                <p>🍎 Machine Learning (NLP) Intern at Apple</p>
+
             </div>
 
             <div class="social-links">
-                <a href="#" class="social-link github">
+                <a href="https://github.com/saduri2004" class="social-link github" target="_blank">
                     <i class="fab fa-github"></i> Github
                 </a>
-                <a href="#" class="social-link linkedin">
+                <a href="https://linkedin.com/in/sasank-aduri" class="social-link linkedin" target="_blank">
                     <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="#" class="social-link email">
+                <a href="mailto:saduri@berkeley.edu" class="social-link email" target="_blank">
                     <i class="far fa-envelope"></i> Email
                 </a>
             </div>
 
             <!-- Navigation Helper -->
             <div class="nav-helper">
-                <div class="nav-helper-text">View:</div>
+                <div class="nav-helper-text">Explore</div>
                 <div class="nav-cards">
-                    <button class="nav-card" onclick="toggleSection('about')">
+                    <div class="nav-card" data-section="about">
                         <i class="fas fa-user"></i>
-                        <span>about me</span>
-                        <i class="fas fa-chevron-down arrow"></i>
-                    </button>
-                    <button class="nav-card" onclick="toggleSection('projects')">
-                        <i class="fas fa-code-branch"></i>
-                        <span>my projects</span>
-                        <i class="fas fa-chevron-down arrow"></i>
-                    </button>
-                    <button class="nav-card" onclick="toggleSection('experience')">
+                        <span>About</span>
+                    </div>
+                    <div class="nav-card active" data-section="projects">
+                        <i class="fas fa-code"></i>
+                        <span>Projects</span>
+                    </div>
+                    <div class="nav-card" data-section="experience">
                         <i class="fas fa-briefcase"></i>
-                        <span>my experiences</span>
-                        <i class="fas fa-chevron-down arrow"></i>
-                    </button>
+                        <span>Experience</span>
+                    </div>
                 </div>
             </div>
 
             <!-- Content Display Area -->
-            <div class="content-display">
+            <div class="sections-container">
                 <div id="about" class="section-content" style="display: none;">
                     <div class="about-grid">
                         <div class="about-card main">
@@ -87,7 +85,7 @@
                     </div>
                 </div>
 
-                <div id="projects" class="section-content" style="display: none;">
+                <div id="projects" class="section-content" style="display: block;">
                     <div class="filter-controls">
                         <div class="filter-group">
                             <label>Skills</label>
@@ -131,33 +129,24 @@
         </header>
 
         <script>
+            // Add click handlers to nav cards
+            document.querySelectorAll('.nav-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const sectionId = card.dataset.section;
+                    toggleSection(sectionId);
+                });
+            });
+
             function toggleSection(sectionId) {
-                const sections = document.querySelectorAll('.section-content');
-                const buttons = document.querySelectorAll('.nav-card');
-                const selectedSection = document.getElementById(sectionId);
-                const selectedButton = document.querySelector(`[onclick="toggleSection('${sectionId}')"]`);
-                
-                // If clicking the active section, close it
-                if (selectedSection.style.display === 'block') {
-                    selectedSection.style.display = 'none';
-                    selectedButton.classList.remove('active');
-                    selectedButton.querySelector('.arrow').style.transform = 'rotate(0deg)';
-                    return;
-                }
-                
-                // Hide all sections and reset all buttons
-                sections.forEach(section => {
-                    section.style.display = 'none';
-                });
-                buttons.forEach(button => {
-                    button.classList.remove('active');
-                    button.querySelector('.arrow').style.transform = 'rotate(0deg)';
+                // Hide all sections and remove active class from all buttons
+                document.querySelectorAll('.section-content').forEach(section => {
+                    section.style.display = section.id === sectionId ? 'block' : 'none';
                 });
                 
-                // Show selected section and activate button
-                selectedSection.style.display = 'block';
-                selectedButton.classList.add('active');
-                selectedButton.querySelector('.arrow').style.transform = 'rotate(180deg)';
+                // Update active state of nav cards
+                document.querySelectorAll('.nav-card').forEach(card => {
+                    card.classList.toggle('active', card.dataset.section === sectionId);
+                });
             }
 
             let projects = [];
@@ -295,17 +284,19 @@
                     </div>` : '';
 
                 return `
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="${project.img}" alt="${project.title}" onerror="this.src='assets/project-placeholder.png'">
+                    <a href="project-details.html?project=${encodeURIComponent(project.title)}" class="project-link">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="${project.img}" alt="${project.title}" onerror="this.src='assets/wingmedicalscribe.png'">
+                            </div>
+                            <div class="project-info">
+                                <h3>${project.title}</h3>
+                                <p>${project.description}</p>
+                                ${topicsHtml}
+                                ${technologiesHtml}
+                            </div>
                         </div>
-                        <div class="project-info">
-                            <h3>${project.title}</h3>
-                            <p>${project.description}</p>
-                            ${topicsHtml}
-                            ${technologiesHtml}
-                        </div>
-                    </div>
+                    </a>
                 `;
             }
 

@@ -4,17 +4,76 @@
             "title": "Employd",
             "img": "assets/employd.png",    
             "description": "An iOS app to assist with unemployment benefits. Received a Congressional Certificate after Texas Workforce Commissions sponsored the app.",
+            "content": "## Overview\nEmployd is a comprehensive iOS application designed to streamline the unemployment benefits process. The app features an intuitive interface that guides users through the application process, helps track benefit payments, and provides real-time updates on claim status.\n\n### Key Features\n- **Smart Form Filling**: AI-powered form completion\n- **Real-time Status Updates**: Track your application progress\n- **Document Scanner**: Easily upload required documents\n- **Multi-language Support**: Available in English and Spanish\n\n### Impact\nThe app has helped thousands of Texas residents easily apply for and manage their unemployment benefits, significantly reducing the processing time and improving the overall experience.",
             "technologies": ["Swift", "iOS"],
             "topics": ["Unemployment Benefits", "Social Impact"],
-            "date": "2023-06-15"
+            "date": "2023-06-15",
+            "gallery": [
+                {
+                    "url": "assets/employd/employd.png",
+                    "caption": "Main Dashboard"
+                },
+                {
+                    "url": "assets/employd/employd.png",
+                    "caption": "Smart Form Filling"
+                },
+                {
+                    "url": "assets/employd/employd.png",
+                    "caption": "Application Status"
+                }
+            ],
+            "links": [
+                {
+                    "title": "App Store",
+                    "url": "#",
+                    "icon": "fas fa-app-store"
+                },
+                {
+                    "title": "GitHub",
+                    "url": "https://github.com/saduri2004/employd",
+                    "icon": "fab fa-github"
+                },
+                {
+                    "title": "Documentation",
+                    "url": "#",
+                    "icon": "fas fa-book"
+                }
+            ]
         },
         {
             "title": "Wing AI",
             "img": "assets/wingsearch.png",
             "description": "A generative AI shopping assistant used in 7 Shopify stores to enhance customer experience.",
+            "content": "## Overview\nWing AI is a cutting-edge generative AI shopping assistant designed to revolutionize the e-commerce experience. By leveraging advanced language models, Wing AI helps customers find products more efficiently and provides personalized recommendations.\n\n### Features\n- **Natural Language Search**: Find products using conversational queries\n- **Personalized Recommendations**: AI-powered product suggestions\n- **Smart Filtering**: Advanced filter combinations through natural language\n\n### Technical Implementation\n```python\n# Example of our recommendation engine\ndef get_recommendations(user_query, product_catalog):\n    # Process user query using NLP\n    embedded_query = embed_text(user_query)\n    \n    # Find similar products\n    recommendations = semantic_search(embedded_query, product_catalog)\n    return recommendations\n```",
             "technologies": ["Python", "LLM APIs", "Shopify Integration"],
             "topics": ["Generative AI", "E-commerce"],
-            "date": "2024-03-01"
+            "date": "2024-03-01",
+            "gallery": [
+                {
+                    "url": "assets/wingai/search.png",
+                    "caption": "Natural Language Search Interface"
+                },
+                {
+                    "url": "assets/wingai/recommendations.png",
+                    "caption": "AI-Powered Recommendations"
+                },
+                {
+                    "url": "assets/wingai/analytics.png",
+                    "caption": "Performance Analytics"
+                }
+            ],
+            "links": [
+                {
+                    "title": "Live Demo",
+                    "url": "#",
+                    "icon": "fas fa-external-link-alt"
+                },
+                {
+                    "title": "GitHub",
+                    "url": "#",
+                    "icon": "fab fa-github"
+                }
+            ]
         },
         {
             "title": "Wing AI Healthcare",

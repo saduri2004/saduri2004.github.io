@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github-dark.css">
+</head>
+<body>
+    <div class="project-details-container">
+        <div class="back-button">
+            <a href="index.html#projects">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+        </div>
+        
+        <div class="project-details">
+            <div class="project-header">
+                <h1 id="project-title"></h1>
+                <p id="project-description" class="project-description"></p>
+            </div>
+
+            <!-- Gallery Section -->
+            <section class="project-section gallery-section">
+                <div class="swiper main-swiper">
+                    <div class="swiper-wrapper" id="gallery-container">
+                        <!-- Gallery items will be inserted here -->
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <div class="swiper thumbs-swiper">
+                    <div class="swiper-wrapper" id="gallery-thumbs">
+                        <!-- Thumbnail items will be inserted here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Section -->
+            <section class="project-section content-section">
+                <h2><i class="fas fa-file-alt"></i> About the Project</h2>
+                <div id="project-content" class="markdown-content"></div>
+            </section>
+
+            <!-- Technologies and Topics Section -->
+            <section class="project-section">
+                <h2><i class="fas fa-tools"></i> Technologies & Topics</h2>
+                <div class="skills-container">
+                    <div id="project-technologies" class="project-technologies"></div>
+                    <div id="project-topics" class="project-topics"></div>
+                </div>
+            </section>
+
+            <!-- Links Section -->
+            <section class="project-section">
+                <h2><i class="fas fa-link"></i> Project Links</h2>
+                <div id="project-links" class="links-container">
+                    <!-- Links will be inserted here -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/python.min.js"></script>
+    <script>
+        // Configure marked.js
+        marked.setOptions({
+            highlight: function(code, lang) {
+                if (lang && hljs.getLanguage(lang)) {
+                    return hljs.highlight(code, { language: lang }).value;
+                }
+                return code;
+            }
+        });
+
+        // Get project ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectTitle = urlParams.get('project');
+        console.log('Project title from URL:', projectTitle);
+
+        // Fetch project data
+        fetch('projects.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Loaded projects data:', data);
+                const project = data.projects.find(p => p.title === projectTitle);
+                console.log('Found project:', project);
+                if (project) {
+                    displayProject(project);
+                }
+            });
+
+        function displayProject(project) {
+            // Set page title
+            document.title = `${project.title} - Project Details`;
+            
+            // Update basic information
+            document.getElementById('project-title').textContent = project.title;
+            document.getElementById('project-description').textContent = project.description;
+
+            // Update content with markdown
+            if (project.content) {
+                console.log('Rendering markdown content:', project.content);
+                const contentHtml = marked.parse(project.content);
+                console.log('Parsed markdown:', contentHtml);
+                document.getElementById('project-content').innerHTML = contentHtml;
+            }
+
+            // Update technologies
+            const techContainer = document.getElementById('project-technologies');
+            if (project.technologies && project.technologies.length > 0) {
+                techContainer.innerHTML = project.technologies.map(tech => `
+                    <div class="tech-tag card-badge">
+                        <span>${tech}</span>
+                    </div>
+                `).join('');
+            }
+
+            // Update topics
+            const topicsContainer = document.getElementById('project-topics');
+            if (project.topics && project.topics.length > 0) {
+                topicsContainer.innerHTML = project.topics.map(topic => `
+                    <div class="topic-tag card-badge">
+                        <span>${topic}</span>
+                    </div>
+                `).join('');
+            }
+
+            // Update gallery
+            const galleryContainer = document.getElementById('gallery-container');
+            const galleryThumbs = document.getElementById('gallery-thumbs');
+            if (project.gallery && project.gallery.length > 0) {
+                // Create main slides
+                galleryContainer.innerHTML = project.gallery.map(item => `
+                    <div class="swiper-slide">
+                        <img src="${item.url}" alt="${item.caption}" onerror="this.src='assets/placeholder.jpeg'">
+                        <div class="gallery-caption">${item.caption}</div>
+                    </div>
+                `).join('');
+
+                // Create thumbnail slides
+                galleryThumbs.innerHTML = project.gallery.map(item => `
+                    <div class="swiper-slide">
+                        <img src="${item.url}" alt="${item.caption}" onerror="this.src='assets/placeholder.jpeg'">
+                    </div>
+                `).join('');
+
+                // Initialize thumbnail swiper
+                const thumbsSwiper = new Swiper('.thumbs-swiper', {
+                    spaceBetween: 10,
+                    slidesPerView: 'auto',
+                    freeMode: true,
+                    watchSlidesProgress: true,
+                });
+
+                // Initialize main swiper with thumbs
+                const mainSwiper = new Swiper('.main-swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    effect: 'fade',
+                    fadeEffect: {
+                        crossFade: true
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    keyboard: {
+                        enabled: true,
+                    },
+                    thumbs: {
+                        swiper: thumbsSwiper
+                    }
+                });
+                
+                document.querySelector('.gallery-section').style.display = 'block';
+            } else {
+                document.querySelector('.gallery-section').style.display = 'none';
+            }
+
+            // Update links
+            const linksContainer = document.getElementById('project-links');
+            if (project.links && project.links.length > 0) {
+                linksContainer.innerHTML = project.links.map(link => `
+                    <a href="${link.url}" class="project-link-button" target="_blank" rel="noopener noreferrer">
+                        <i class="${link.icon}"></i>
+                        ${link.title}
+                    </a>
+                `).join('');
+            }
+        }
+    </script>
+</body>
+</html>
