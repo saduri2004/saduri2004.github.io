@@ -1,6 +1,126 @@
 {
     "projects": [
         {
+            "title": "WebGauntlet",
+            "img": "assets/webgauntlet.png",
+            "description": "A web safety and security benchmark designed for testing web agents against malicious internet content.",
+            "content": "WebGauntlet is a comprehensive benchmark designed to evaluate the safety and robustness of web agents in adversarial digital environments. It challenges state-of-the-art language models with realistic threats, uncovering vulnerabilities and providing insights for developing safer, more resilient agentic systems.\n\n### Overview:\nWebGauntlet addresses the critical need for robust evaluations of web agents, focusing on their safety in real-world digital environments. As the integration of language model agents into online ecosystems grows, ensuring their resilience to malicious content, jailbreaks, and deceptive tactics becomes increasingly essential. WebGauntlet introduces a benchmark of 293 tasks across three major environments-single-site and multi-site scenarios-that simulate a range of adversarial conditions, from phishing attempts to invisible text manipulation. The benchmark evaluates the agent's ability to navigate complex tasks safely, avoiding traps and making sound decisions despite scaled difficulty and adversarial interference.\n### Key Features:\n- **Adversarial Benchmarks**: 293 tasks spanning single-site and multi-site scenarios with scaled difficulty levels.\n- **Comprehensive Evaluation Framework**: Tracks success rates, attack resistance, and failure modes through trajectory analysis.\n- **Robust Environment Construction**: Includes three simulated websites: WebGauntlet.com, WebStore.com, and WebPremium.com.\n- **Safety Insights and Future Directions**: Identifies sycophantic behaviors and reasoning failures in LLM agents.\n- **Open-Source Accessibility**: Provides publicly available code, data, and environments for further research and development.",
+            "gallery": [
+                {
+                    "url": "assets/webgauntlet/webgauntlet.png",
+                    "caption": "Main Dashboard"
+                }
+            ],
+            "links": [
+                {
+                    "title": "Live Demo",
+                    "url": "https://webgauntlet.sasank.dev",
+                    "icon": "fas fa-external-link-alt"
+                },
+                {
+                    "title": "GitHub",
+                    "url": "https://github.com/sasank/webgauntlet",
+                    "icon": "fab fa-github"
+                }
+            ],
+            "topics": ["Web Security", "Agent Testing"],
+            "date": "2024-09-01",
+            "technologies": ["React", "Node.js", "Python"]
+        },
+        {
+            "title": "AI Medical Scribe (UCSF)",
+            "img": "assets/wingmedicalscribe.png",
+            "content": "**Piloted at UCSF Children's Hospital**\n\n## 1. Overview\n\nMeredith is an advanced AI medical scribe designed to revolutionize clinical documentation by automating and streamlining the note-taking process for healthcare professionals. Developed in collaboration with esteemed institutions like UCSF Children's Hospital and Stanford Medicine, Meredith leverages state-of-the-art natural language processing (NLP) and machine learning technologies to deliver highly accurate and personalized medical notes. By adapting seamlessly to each clinician’s unique charting style, Meredith ensures that every documentation piece resonates with the provider’s authentic clinical voice, allowing doctors to focus more on patient care and less on administrative tasks.\n\n## 2. Offerings\n\n### Advanced AI Scribing\n- **Real-Time Transcription**: Converts live conversations into high-fidelity text effortlessly.\n- **Automated Organization**: Structures clinical details logically to produce coherent and comprehensive notes.\n- **Editable Documentation**: Generates fully-editable notes that reflect the clinician’s personal writing style without the need for extensive re-editing.\n- **HIPAA Compliant**: Ensures the highest standards of privacy and security for all patient information, with notes automatically deleted after 14 days.\n\n### Multilingual Support\n- **20+ Languages**: Supports a wide range of languages and local dialects, making it accessible to diverse healthcare settings.\n\n### User-Friendly Experience\n- **Intuitive Dashboard**: Easy-to-navigate interface deployed on AWS Amplify for seamless access and scalability.\n- **Quick Setup**: Get started in minutes with a streamlined onboarding process and customizable chart templates.\n- **Personal Support**: Dedicated support team available to assist with any questions or customization needs.\n\n## 3. Technical\n\n### Frontend\n- **React JS**: The user interface is built with React JS, ensuring a responsive and dynamic user experience.\n- **AWS Amplify**: Deployed on AWS Amplify for reliable, scalable, and secure access across various devices.\n\n### Backend\n- **Custom Multiagent Framework**: Engineered specifically for medical scribing to maximize accuracy and efficiency.\n  1. **Speech-to-Text (STT)**: Converts spoken conversations into precise text in real-time.\n  2. **Key Moment Extraction**: Identifies and extracts clinically relevant moments from the transcribed text.\n  3. **Scribed Content Generation**: Compiles the extracted key moments into a structured and coherent medical note.\n  4. **Styling Mask**: Applies a customized mask to the scribed content, tailoring it to fit the doctor’s specific writing style.\n\n### Personalization & Finetuning\n- **Bootstrap Finetuning Mechanism**: A proprietary finetuning process that adjusts the AI models based on doctor-provided examples. This ensures that the generated notes align perfectly with each practitioner’s preferred tone, format, and syntax.\n- **Adaptive Learning**: Continuously learns from user interactions and edits to improve accuracy and personalization over time.\n\n### Scalability & Performance\n- **Cloud-Based Infrastructure**: Utilizes AWS services to provide scalable performance, accommodating the needs of both small practices and large medical institutions.\n\nMeredith’s comprehensive technical architecture, combined with its user-centric design and advanced AI capabilities, sets a new standard in medical scribing. By automating the documentation process with precision and personalization, Meredith empowers clinicians to enhance their efficiency and focus on what truly matters—patient care.",
+            "description": "Developed an AI-powered medical scribe to assist in healthcare documentation.",
+            "technologies": ["Python", "LLM APIs", "Healthcare Systems"],
+            "topics": ["Healthcare AI", "Automation"],
+            "date": "2024-04-15",
+            "gallery": [],
+            "links": [
+                {
+                    "title": "Demo",
+                    "url": "https://meredith.sasank.dev",
+                    "icon": "fas fa-external-link-alt"
+                }
+            ]
+        },
+        {
+            "title": "AgentOS",
+            "img": "assets/agentos.png",
+            "content": "AgentOS is a multi-agent cyclic workflow builder designed for complex tasks, enabling workflows to be created entirely in natural language within minutes. With AgentOS, everyone from individual users to enterprise customers can build intricate agentic workflows such as:\n\n💸 **Accounting Workflow for SMBs**: Intake invoices/receipts, cluster them into spend categories, create cash flow/accounting statements, produce documentation and paperwork, and generate spend insights.\n\n📊 **Marketing Campaign Management**: Plan and schedule campaigns, automate content distribution, track engagement metrics, and generate performance reports.\n\n📦 **Supply Chain Management**: Connect to inventory tracking platforms, manage supplier relationships, automate order processing, and generate detailed logistics reports.\n\nAll these workflows can be created and managed using simple, natural language commands, making it accessible to users without technical expertise.\n\nWe recently wrote a detailed technical blog that delves deeper into AgentOS, our vision for the future of LLM agents, and potential directions for further development and collaboration. We'd love for you to check it out and reach out with any questions or thoughts!\n\n---\n\n## Technical Overview\n\nAgentOS utilizes a hierarchical multi-agent system to break down complex tasks into modular workflows. It employs:\n\n- **Frontend**: Built with the MERN stack, providing an intuitive user interface for defining workflows in natural language.\n- **Backend**: Orchestrates workflows using Microsoft AutoGen and LangGraph to construct agentic teams:\n  - **Supervisors**: Central coordinators that distribute tasks among workers.\n  - **Workers**: Specialized agents equipped with tools and tailored prompts for executing specific tasks.\n- **Scalability**: Supports both vertical scalability (teams of supervisors supervising workers) and horizontal scalability (adding more agents or teams to handle increased workloads).\n- **Reliability Enhancements**: Introduces verifier agents to validate outputs and ensure accuracy, reducing errors in task execution.\n\nAgentOS combines the usability of platforms like Microsoft AutoGen Studio with the complexity-handling capabilities of LangGraph, creating a powerful yet accessible solution for automating complex workflows.\n\nStay tuned for more developments as we refine AgentOS and explore exciting new frontiers in the space of multi-agent systems. If you're working in this area, we'd love to collaborate!",
+            "description": "Built a multi-agent workflow creator that automates processes using natural language input.",
+            "technologies": ["Python", "LLM APIs", "Workflow Automation"],
+            "topics": ["Multi-Agent Systems", "Automation"],
+            "date": "2024-11-01",
+            "gallery": [],
+            "links": []
+        },
+        {
+            "title": "AI Medical Frontdesk",
+            "img": "assets/wingaihealthcare2.png",
+            "description": "Built an AI-powered healthcare frontdesk system and a healthcare translation tool for medical documentation.",
+            "technologies": ["Python", "Flask", "RAG"],
+            "topics": ["Healthcare AI", "Translation", "Frontdesk Automation"],
+            "date": "2024-06-20",
+            "gallery": [],
+            "links": []
+        },
+
+
+        {
+            "title": "Wing Search",
+            "img": "assets/wingsearch.png",
+            "description": "A generative AI shopping assistant used in 7 Shopify stores to enhance customer experience.",
+            "content": "## Overview\nWing AI is a cutting-edge generative AI shopping assistant designed to revolutionize the e-commerce experience. By leveraging advanced language models, Wing AI helps customers find products more efficiently and provides personalized recommendations.\n\n### Features\n- **Natural Language Search**: Find products using conversational queries\n- **Personalized Recommendations**: AI-powered product suggestions\n- **Smart Filtering**: Advanced filter combinations through natural language\n\n### Technical Implementation\n```python\n# Example of our recommendation engine\ndef get_recommendations(user_query, product_catalog):\n    # Process user query using NLP\n    embedded_query = embed_text(user_query)\n    \n    # Find similar products\n    recommendations = semantic_search(embedded_query, product_catalog)\n    return recommendations\n```",
+            "technologies": ["Python", "React", "Shopify"],
+            "topics": ["E-commerce", "Search", "Recommendations"],
+            "date": "2024-01-15",
+            "gallery": [],
+            "links": [
+                {
+                    "title": "Demo Store",
+                    "url": "https://wing.sasank.dev",
+                    "icon": "fas fa-external-link-alt"
+                }
+            ]
+        },
+
+
+
+
+        {
+            "title": "Chameleon",
+            "img": "assets/chameleon.png",
+            "description": "An application that automatically customizes resumes and cover letters for job applications.",
+            "technologies": ["Python", "NLP"],
+            "topics": ["Career Development", "Automation"],
+            "date": "2024-12-01",
+            "gallery": [],
+            "links": []
+        },
+
+        {
+            "title": "ORAGutan",
+            "img": "assets/oragutan.png",
+            "description": "Developed a Retrieval-Augmented Generation (RAG) benchmark to evaluate generative AI systems.",
+            "technologies": ["Python", "LLMs", "Benchmarking Tools"],
+            "topics": ["RAG", "AI Benchmarks"],
+            "date": "2024-09-15",
+            "gallery": [],
+            "links": []
+        },
+        {
+            "title": "Deep Learning Trading Bot",
+            "img": "assets/deeplearningtrading.png",
+            "description": "An AI tool that uses deep learning to identify optimal stock investments.",
+            "content": "# Quantitative Investment Bot\n\n## Overview\n\nIn this series of visualizations, we explore the performance of a trading strategy operating in a market characterized by a persistent upward trend. The trading bot demonstrates consistent profitability through strategically placed buy and sell signals, a skewed profit distribution favoring gains, and steady cumulative profits. By leveraging the upward price movement, the strategy showcases its ability to harness opportunities presented by the market's trajectory, providing compelling evidence of its success in generating returns.\n\n## Methods and Technologies\n\nThe Quantitative Investment Bot employs machine learning techniques, including reinforcement learning and predictive modeling, to optimize trading strategies. Reinforcement learning agents are trained to identify profitable entry and exit points by interacting with market environments and maximizing reward functions based on cumulative profits. Predictive models, such as LSTM (Long Short-Term Memory) networks, are utilized to forecast price trends and volatility by analyzing historical price data and identifying patterns indicative of market movements. This hybrid approach, combining deep learning for prediction and reinforcement learning for decision-making, ensures robust and adaptive trading strategies that capitalize on market dynamics effectively.\n\n## Visualizations\n\n### Price and Signals\nThis plot displays the daily price chart with buy (green) and sell (red) signals, showcasing the strategy's ability to capitalize on the market's upward trend. price_and_signals\n\n### Profit Distribution\nA histogram revealing a positively skewed profit distribution, highlighting the strategy's consistent ability to generate gains in the rising market. profit_distribution\n\n### Cumulative Total Profits\nThis plot illustrates the steadily increasing cumulative profits, representing the strategy's consistent success in capturing market opportunities. cumulative_profits\n\n### Daily Profit Plots\nA closer look at daily profits, showing consistent gains above the zero-profit line, aligning with the market's overall upward trend. daily_profits", 
+            "technologies": ["Python", "Deep Learning", "Finance APIs"],
+            "topics": ["Finance", "Machine Learning"],
+            "date": "2025-01-01",
+            "gallery": [],
+            "links": []
+        },
+        {
             "title": "Employd",
             "img": "assets/employd.png",    
             "description": "An iOS app to assist with unemployment benefits. Received a Congressional Certificate after Texas Workforce Commissions sponsored the app.",
@@ -25,7 +145,7 @@
             "links": [
                 {
                     "title": "App Store",
-                    "url": "#",
+                    "url": "https://devpost.com/employd",
                     "icon": "fas fa-app-store"
                 },
                 {
@@ -41,119 +161,36 @@
             ]
         },
         {
-            "title": "Wing AI",
-            "img": "assets/wingsearch.png",
-            "description": "A generative AI shopping assistant used in 7 Shopify stores to enhance customer experience.",
-            "content": "## Overview\nWing AI is a cutting-edge generative AI shopping assistant designed to revolutionize the e-commerce experience. By leveraging advanced language models, Wing AI helps customers find products more efficiently and provides personalized recommendations.\n\n### Features\n- **Natural Language Search**: Find products using conversational queries\n- **Personalized Recommendations**: AI-powered product suggestions\n- **Smart Filtering**: Advanced filter combinations through natural language\n\n### Technical Implementation\n```python\n# Example of our recommendation engine\ndef get_recommendations(user_query, product_catalog):\n    # Process user query using NLP\n    embedded_query = embed_text(user_query)\n    \n    # Find similar products\n    recommendations = semantic_search(embedded_query, product_catalog)\n    return recommendations\n```",
-            "technologies": ["Python", "LLM APIs", "Shopify Integration"],
-            "topics": ["Generative AI", "E-commerce"],
-            "date": "2024-03-01",
-            "gallery": [
-                {
-                    "url": "assets/wingai/search.png",
-                    "caption": "Natural Language Search Interface"
-                },
-                {
-                    "url": "assets/wingai/recommendations.png",
-                    "caption": "AI-Powered Recommendations"
-                },
-                {
-                    "url": "assets/wingai/analytics.png",
-                    "caption": "Performance Analytics"
-                }
-            ],
-            "links": [
-                {
-                    "title": "Live Demo",
-                    "url": "#",
-                    "icon": "fas fa-external-link-alt"
-                },
-                {
-                    "title": "GitHub",
-                    "url": "#",
-                    "icon": "fab fa-github"
-                }
-            ]
-        },
-        {
-            "title": "Wing AI Healthcare",
-            "img": "assets/wingmedicalscribe.png",
-            "description": "Developed an AI-powered medical scribe to assist in healthcare documentation.",
-            "technologies": ["Python", "LLM APIs", "Healthcare Systems"],
-            "topics": ["Healthcare AI", "Automation"],
-            "date": "2024-04-15"
-        },
-        {
-            "title": "Wing AI Healthcare 2",
-            "img": "assets/wingaihealthcare2.png",
-            "description": "Built an AI-powered healthcare frontdesk system and a healthcare translation tool for medical documentation.",
-            "technologies": ["Python", "Flask", "RAG"],
-            "topics": ["Healthcare AI", "Translation", "Frontdesk Automation"],
-            "date": "2024-06-20"
-        },
-        {
             "title": "Audibraille",
             "img": "assets/audibraille.png",
             "description": "Created an attachable device for glasses to convert books into audio in real-time, supporting 100+ languages for blind students in India.",
             "technologies": ["Computer Vision", "NLP", "Hardware"],
             "topics": ["Accessibility", "Education"],
-            "date": "2024-08-01"
-        },
-        {
-            "title": "ORAGutan",
-            "img": "assets/oragutan.png",
-            "description": "Developed a Retrieval-Augmented Generation (RAG) benchmark to evaluate generative AI systems.",
-            "technologies": ["Python", "LLMs", "Benchmarking Tools"],
-            "topics": ["RAG", "AI Benchmarks"],
-            "date": "2024-09-15"
-        },
-        {
-            "title": "WebGauntlet",
-            "img": "assets/webgauntlet.png",
-            "description": "A web safety and security benchmark designed for testing web agents against malicious internet content.",
-            "technologies": ["React", "Node.js", "Python"],
-            "topics": ["Web Security", "Agent Testing"],
-            "date": "2024-10-01"
-        },
-        {
-            "title": "AgentOS",
-            "img": "assets/agentos.png",
-            "description": "Built a multi-agent workflow creator that automates processes using natural language input.",
-            "technologies": ["Python", "LLM APIs", "Workflow Automation"],
-            "topics": ["Multi-Agent Systems", "Automation"],
-            "date": "2024-11-01"
-        },
-        {
-            "title": "Chameleon",
-            "img": "assets/chameleon.png",
-            "description": "An application that automatically customizes resumes and cover letters for job applications.",
-            "technologies": ["Python", "NLP"],
-            "topics": ["Career Development", "Automation"],
-            "date": "2024-12-01"
-        },
-        {
-            "title": "Stock Picker",
-            "img": "assets/stockpicker.png",
-            "description": "An AI tool that uses deep learning to identify optimal stock investments.",
-            "technologies": ["Python", "Deep Learning", "Finance APIs"],
-            "topics": ["Finance", "Machine Learning"],
-            "date": "2025-01-01"
+            "date": "2024-08-01",
+            "gallery": [],
+            "links": []
         },
         {
             "title": "4G Coverage Optimization",
-            "img": "assets/4gcoverage.png",
+            "img": "assets/4g.png",
+            "content":"# Equitable 4G Coverage Optimization\n\n## Title Page Description\n\nThis project leverages K-means clustering to optimize satellite coverage and reduce global dead spots. By reallocating satellite positions based on clustering insights, the solution enhances global connectivity, disaster response capabilities, and resource efficiency, providing critical advancements in equitable access to communication services.\n\n## Content Page\n\nThe Equitable 4G Coverage Optimization project addresses the pressing need for improved global satellite coverage, particularly in underserved regions with limited connectivity. Using K-means clustering, this solution reallocates satellite positions to minimize dead spots and maximize coverage efficiency. The process involves analyzing global coverage data, identifying regions with insufficient satellite coverage, and repositioning satellites based on clustering results. Visualizations, such as world maps and heatmaps, illustrate the impact of this optimization, highlighting coverage improvements and reductions in dead spot areas.\n\nThe motivation for this project spans multiple domains, from enhancing disaster response and scientific research to optimizing resource allocation and enabling equitable global connectivity. By integrating advanced clustering algorithms with satellite management, the project provides a robust, scalable solution to address coverage inefficiencies. Metrics like coverage improvement and dead spot area reduction quantify the positive outcomes, demonstrating the potential of this approach to transform communication infrastructure worldwide.\n\n### Key Features\n\n**Satellite Reallocation Using K-means Clustering**: Repositions satellites to target areas with dead spots and dynamically adjusts positions based on clustering insights.\n\n**Coverage Visualization**: Generates world maps to display original and optimized satellite positions and produces heatmaps to visualize coverage before and after reallocation.\n\n**Impact Assessment Metrics**: Quantifies coverage improvement and measures dead spot area reduction to demonstrate effectiveness.\n\n**Real-World Applications**: Enhances disaster response capabilities, supports scientific research by improving data accessibility in remote regions, and optimizes resource allocation to reduce redundancy and operational costs.",
             "description": "Developed algorithms to optimize 4G coverage for telecom networks.",
             "technologies": ["Python", "Optimization Algorithms"],
             "topics": ["Telecom", "Optimization"],
-            "date": "2023-05-01"
+            "date": "2023-05-01",
+            "gallery": [],
+            "links": []
         },
         {
             "title": "Black Scholes Investment Engine",
             "img": "assets/blackscholes.png",
             "description": "Implemented an investment engine using the Black-Scholes model for option pricing.",
+            
             "technologies": ["Python", "Finance Models"],
             "topics": ["Finance", "Quantitative Modeling"],
-            "date": "2023-12-01"
+            "date": "2023-12-01",
+            "gallery": [],
+            "links": []
         }
     ]
 }

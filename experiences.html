@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Sasank Aduri</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div id="experiences-container" class="experiences-grid">
+            <!-- Experience cards will be dynamically added here -->
+        </div>
+    </div>
+
+    <script>
+        async function loadExperiences() {
+            try {
+                const response = await fetch('experiences.json');
+                const data = await response.json();
+                const container = document.getElementById('experiences-container');
+
+                data.experiences.forEach(exp => {
+                    const card = document.createElement('div');
+                    card.className = 'experience-card';
+                    
+                    const header = document.createElement('div');
+                    header.className = 'experience-header';
+                    
+                    const expandButton = document.createElement('button');
+                    expandButton.className = 'expand-button';
+                    expandButton.innerHTML = '<i class="fas fa-chevron-down"></i>';
+                    
+                    const profileSection = document.createElement('div');
+                    profileSection.className = 'profile-section';
+                    
+                    const img = document.createElement('img');
+                    img.src = exp.img;
+                    img.alt = exp.company;
+                    img.className = 'company-logo';
+                    
+                    const titleSection = document.createElement('div');
+                    titleSection.className = 'title-section';
+                    titleSection.innerHTML = `
+                        <h3>${exp.company}</h3>
+                        <p>${exp.role}</p>
+                    `;
+                    
+                    const content = document.createElement('div');
+                    content.className = 'experience-content collapsed';
+                    content.innerHTML = `
+                        <p class="date">${exp.date}</p>
+                        <p class="description">${exp.description}</p>
+                        <div class="achievements">
+                            <h4>Key Achievements:</h4>
+                            <ul>
+                                ${exp.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="technologies">
+                            <h4>Technologies:</h4>
+                            <div class="tech-tags">
+                                ${exp.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                            </div>
+                        </div>
+                    `;
+                    
+                    profileSection.appendChild(img);
+                    profileSection.appendChild(titleSection);
+                    
+                    header.appendChild(profileSection);
+                    header.appendChild(expandButton);
+                    
+                    card.appendChild(header);
+                    card.appendChild(content);
+                    
+                    // Add click event to toggle content
+                    header.addEventListener('click', () => {
+                        content.classList.toggle('collapsed');
+                        expandButton.querySelector('i').classList.toggle('fa-chevron-up');
+                        expandButton.querySelector('i').classList.toggle('fa-chevron-down');
+                    });
+                    
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error loading experiences:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadExperiences);
+    </script>
+</body>
+</html>

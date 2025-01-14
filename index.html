@@ -30,8 +30,8 @@
             </div>
 
             <div class="current-work">
-                <p>🐻 3rd Year EECS Student at UC Berkeley</p>
-                <p>🍎 Machine Learning (NLP) Intern at Apple</p>
+                <p> 3rd Year EECS Student at UC Berkeley</p>
+                <p> Machine Learning (NLP) Intern at Apple</p>
 
             </div>
 
@@ -80,7 +80,7 @@
                         </div>
                         <div class="about-card">
                             <h3><i class="fas fa-heart"></i> interests</h3>
-                            <p>When I'm not coding, you'll find me playing games with friends, watching shows on Netflix, or enjoying a game of basketball! 🏀</p>
+                            <p>When I'm not coding, you'll find me playing games with friends, watching shows on Netflix, or enjoying a game of basketball! </p>
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                 </div>
 
                 <div id="experience" class="section-content" style="display: none;">
-                    <div class="experience-timeline" id="experience-container">
+                    <div class="experiences-grid" id="experience-container">
                         <!-- Experiences will be loaded dynamically -->
                     </div>
                 </div>
@@ -304,39 +304,68 @@
             fetch('experiences.json')
                 .then(response => response.json())
                 .then(data => {
-                    const experienceContainer = document.getElementById('experience-container');
-                    experienceContainer.innerHTML = data.experiences.map(exp => createExperienceElement(exp)).join('');
+                    const container = document.getElementById('experience-container');
+                    data.experiences.forEach(exp => {
+                        container.appendChild(createExperienceElement(exp));
+                    });
                 });
 
-            function createExperienceElement(experience) {
-                const responsibilitiesList = experience.responsibilities
-                    ? `<ul>${experience.responsibilities.map(resp => `<li>${resp}</li>`).join('')}</ul>`
-                    : '';
-                    
-                const technologiesList = experience.technologies
-                    ? `<div class="experience-technologies">
-                        ${experience.technologies.map(tech => `
-                            <div class="tech-tag card-badge">
-                                <span>${tech}</span>
-                            </div>
-                        `).join('')}
-                       </div>`
-                    : '';
-
-                return `
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <h3>${experience.title}</h3>
-                            <p class="company">${experience.company}</p>
-                            <p class="duration">${experience.duration}</p>
-                        </div>
-                        <div class="experience-content">
-                            <p>${experience.description}</p>
-                            ${responsibilitiesList}
-                            ${technologiesList}
-                        </div>
+            function createExperienceElement(exp) {
+                const card = document.createElement('div');
+                card.className = 'experience-card';
+                
+                const header = document.createElement('div');
+                header.className = 'experience-header';
+                
+                const expandButton = document.createElement('button');
+                expandButton.className = 'expand-button';
+                expandButton.innerHTML = '<i class="fas fa-chevron-down"></i>';
+                
+                const profileSection = document.createElement('div');
+                profileSection.className = 'profile-section';
+                
+                const imgContainer = document.createElement('div');
+                imgContainer.className = 'company-logo';
+                
+                const img = document.createElement('img');
+                img.src = exp.img || 'assets/default-company.png';
+                img.alt = exp.company;
+                
+                imgContainer.appendChild(img);
+                
+                const titleSection = document.createElement('div');
+                titleSection.className = 'title-section';
+                titleSection.innerHTML = `
+                    <h3>${exp.company}</h3>
+                    <p>${exp.title}</p>
+                `;
+                
+                const content = document.createElement('div');
+                content.className = 'experience-content collapsed';
+                content.innerHTML = `
+                    <p class="date">${exp.duration}</p>
+                    <p class="description">${exp.description}</p>
+                    <div class="tech-tags">
+                        ${exp.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
                     </div>
                 `;
+                
+                profileSection.appendChild(imgContainer);
+                profileSection.appendChild(titleSection);
+                
+                header.appendChild(profileSection);
+                header.appendChild(expandButton);
+                
+                card.appendChild(header);
+                card.appendChild(content);
+                
+                header.addEventListener('click', () => {
+                    content.classList.toggle('collapsed');
+                    expandButton.querySelector('i').classList.toggle('fa-chevron-up');
+                    expandButton.querySelector('i').classList.toggle('fa-chevron-down');
+                });
+                
+                return card;
             }
 
             // Close dropdowns when clicking outside

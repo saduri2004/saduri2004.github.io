@@ -1,28 +1,127 @@
 {
     "experiences": [
         {
-            "title": "Frontend Engineer",
-            "company": "Tech Company",
-            "duration": "2024 - Present",
-            "description": "Led development of responsive web applications using modern frameworks",
+            "title": "Software Engineering Intern",
+            "company": "Apple - Apple Pay",
+            "img": "assets/companies/apple3.png",
+            "duration": "May 2024 – December 2024",
+            "description": "Developed and deployed LLM agent support platforms for Apple Pay integration, scaling solutions for merchant automation.",
             "responsibilities": [
-                "Developed and maintained user interfaces using React and TypeScript",
-                "Collaborated with design team to implement pixel-perfect designs",
-                "Optimized application performance and loading times"
+                "Built and deployed a React, Python, Kubernetes-based platform supporting 100+ merchants with a growth plan for millions.",
+                "Enhanced RAG system with query expansion using dense embeddings and cross-encoder reranking for better retrieval relevance.",
+                "Proxied REST APIs with NGINX for advanced RAG ingestion, embedding, and completion with OAuth 2.0 security.",
+                "Engineered a multivariate regression model optimizing Apple Pay button placement on Shopify, forecasting a 34% click-through increase."
             ],
-            "technologies": ["React", "TypeScript", "CSS"]
+            "technologies": ["React", "Python", "Kubernetes", "NGINX", "RAG"]
         },
         {
-            "title": "Software Engineer Intern",
-            "company": "Startup Inc",
-            "duration": "2023",
-            "description": "Worked on full-stack development of web applications",
+            "title": "Machine Learning Engineering Intern",
+            "company": "Apple - Siri Information & Intelligence",
+            "img": "assets/companies/apple3.png",
+
+            "duration": "May 2024 – June 2024",
+            "description": "Developed LLM prompt optimization tools and query reformulation pipelines for domain-specific agents.",
             "responsibilities": [
-                "Built RESTful APIs using Node.js and Express",
-                "Implemented new features in React frontend",
-                "Wrote unit tests and documentation"
+                "Built an automatic LLM prompt and weight optimizer leveraging a Bayesian surrogate model, improving test data accuracy by 14%.",
+                "Developed a query reformulation pipeline for domain-specific agents, yielding a 26% improvement on QRECC dataset.",
+                "Packaged the pipeline as a connector module for Apple’s internal foundation models to enhance query handling."
             ],
-            "technologies": ["Node.js", "Express", "MongoDB"]
+            "technologies": ["Python", "Bayesian Optimization", "QRECC"]
+        },
+        {
+            "title": "Pear Garage Fellow",
+            "company": "Pear VC",
+            "img": "assets/companies/pearvc.jpeg",
+            "duration": "June 2024 – Present",
+            "description": "Recognized as a global AI builder for developing AI tools improving clinical and operational workflows.",
+            "responsibilities": [
+                "Created an AI clinical scribe integrated with EHRs, reducing clinician documentation time by 40%.",
+                "Implemented an LLM multiagent front desk enabling automated bookings and scheduling for UCSF and Bass Medical."
+            ],
+            "technologies": ["EHR Integration", "LLM Multiagent Systems"]
+        },
+        
+        {
+            "title": "Software Engineering, Machine Learning Intern",
+            "company": "RTHM (Stanford Medicine)",
+            "img": "assets/companies/rthm.jpeg",
+            "duration": "May 2023 – April 2024",
+            "description": "Developed tools for medical visualization and patient biomarker prediction to streamline clinical workflows.",
+            "responsibilities": [
+                "Built a Node.js/Python app to generate advanced medical visualizations, reducing analysis time from 1 week to 1 minute.",
+                "Developed a LASSO regression model predicting patient biomarkers with a 0.91 R² score and 8% mean absolute error."
+            ],
+            "technologies": ["Node.js", "Python", "LASSO Regression"]
+        },
+        {
+            "title": "Founder, CTO",
+            "company": "Wing AI",
+            "img": "assets/companies/wing.jpeg",
+            "duration": "June 2023 – May 2024",
+            "description": "Led the development of AI-powered tools for e-commerce optimization.",
+            "responsibilities": [
+                "Implemented RAG search for conversational search bars on Shopify, increasing average order value by 20%.",
+                "Built a full-stack React and Firebase app for 7 online stores, boosting cart size by 15%."
+            ],
+            "technologies": ["React", "Firebase", "RAG"]
+        },
+        
+        {
+            "title": "Machine Learning Technical Intern",
+            "company": "AlgoBlocks",
+            "img": "assets/companies/algoblocks.png",
+            "duration": "January 2023 - Present",
+            "description": "Developed AI algorithms and DApps to enhance web3 safety and identify vulnerabilities in smart contracts.",
+            "responsibilities": [
+                "Spearheaded development of GPT-3/Codex-based ML algorithms to identify vulnerabilities in Solidity smart contracts.",
+                "Developed a retail-investor focused DApp integrating vulnerability identification algorithms and smart contract technology.",
+                "Conducted thorough testing and debugging to ensure web3 safety and data security.",
+                "Managed cross-functional initiatives by collaborating with engineers, tracking progress, and resolving dependencies."
+            ],
+            "technologies": ["GPT-3", "Codex", "Solidity", "DApp Development"]
+        },
+        {
+            "title": "Strategy Consultant",
+            "company": "Blue Origin",
+            "img": "assets/companies/blueorigin.png",
+            "location": "Kent, WA",
+            "duration": "September 2022 - December 2022",
+            "description": "Provided strategic recommendations for emerging propulsion systems and in-space resource utilization.",
+            "responsibilities": [
+                "Conducted market analysis for emerging propulsion systems and investment opportunities.",
+                "Presented forward-thinking actions in a partnership strategy to executive leadership.",
+                "Developed strategic recommendations to optimize in-space resource extraction and utilization."
+            ],
+            "technologies": ["Market Analysis", "Strategy Development"]
+        },
+        {
+            "title": "Software Engineering and Product Management Intern",
+            "company": "Outwork Automation",
+            "location": "Berkeley, CA",
+            "img": "assets/companies/outwork.jpeg",
+            "duration": "September 2022 - December 2022",
+            "description": "Led the development of a quoting platform and client tools for optimizing production costs.",
+            "responsibilities": [
+                "Developed a quoting platform for clients, including Tesla and SpaceX, optimizing processes using React and Python.",
+                "Created a client tool leveraging ML to automate quoting processes and reduce production costs.",
+                "Collaborated with cross-functional teams, identified communication gaps, and led cross-functional planning.",
+                "Developed detailed roadmaps by balancing priorities and removing obstacles."
+            ],
+            "technologies": ["React", "Python", "HTML/CSS", "ML"]
+        },
+        {
+            "title": "Software Engineering Intern (Enterprise Architecture)",
+            "company": "Texas Workforce Commission (TWC)",
+            "location": "Austin, TX",
+            "img": "assets/companies/twc.jpeg",
+            "duration": "June 2021 - August 2021",
+            "description": "Integrated self-developed apps with state systems to digitize unemployment insurance processes.",
+            "responsibilities": [
+                "Integrated the self-developed 'Employd' app with TWC mainframe system upon Congressional request.",
+                "Designed software to automate tasks, provide reminders, and reduce erroneous unemployment claims submissions.",
+                "Streamlined the manual TX unemployment insurance process for internal government release by 2025."
+            ],
+            "technologies": ["Application Development", "Automation", "Mainframe Integration"]
         }
     ]
 }
